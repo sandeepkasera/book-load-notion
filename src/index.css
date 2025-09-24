@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* keeps it aligned from top */
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  background-color: #fff;
+}
+
+#root {
+  width: 100%;
+  max-width: 1200px; /* control width */
+}
