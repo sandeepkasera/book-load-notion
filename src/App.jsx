@@ -6,19 +6,10 @@ import Status from "./components/Status";
 import Table from "./components/Table";
 import Pagination from "./components/Pagination";
 import { useDebounce } from "./utils/useDebounce"; // ✅ custom hook
+import jsonToCSV from "./utils/json2CSV";
 import "./index.css";
 
 const COLUMNS = ["Title", "Author", "Genre", "PublishedYear", "ISBN"];
-
-// Convert JSON -> CSV
-function jsonToCSV(rows) {
-  if (!rows.length) return "";
-  const headers = Object.keys(rows[0]);
-  const lines = rows.map((r) =>
-    headers.map((h) => `"${(r[h] || "").toString().replace(/"/g, '""')}"`).join(",")
-  );
-  return [headers.join(","), ...lines].join("\n");
-}
 
 function App() {
   const [rows, setRows] = useState([]);
