@@ -7,7 +7,7 @@ export default function Table({ rows, onCellChange, editedMap, sortConfig, onSor
     <div className="overflow-x-auto rounded-lg shadow-md border border-gray-200">
       <table className="w-full text-sm text-left border-collapse">
         {/* Header */}
-        <thead className="bg-gray-300 text-white uppercase text-xs font-semibold tracking-wide">
+        <thead className="bg-gray-300 uppercase text-xs font-semibold tracking-wide">
           <tr>
             {COLUMNS.map((col) => (
               <th
