@@ -13,17 +13,24 @@ export default function Controls({
 }) {
   return (
     <div className="flex flex-wrap gap-3 justify-center items-center p-3 border-b border-gray-300 bg-white">
+      <label
+        htmlFor="file-upload"
+        className="flex items-center gap-2 px-4 py-2 bg-gray-600 text-white text-sm font-medium rounded-lg shadow hover:bg-gray-700 cursor-pointer transition"
+      >
+        📂 Upload CSV
+      </label>
       <input
+        id="file-upload"
         type="file"
         accept="text/csv"
         onChange={handleUpload}
-        className="border p-2 rounded cursor-pointer"
+        className="hidden"
       />
 
       <button
         onClick={handleDownload}
         disabled={rows.length === 0}
-        className="px-4 py-2 border rounded bg-gray-100 hover:bg-gray-200 disabled:opacity-50"
+        className="px-4 py-2 border rounded bg-gray-100 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         Download CSV
       </button>
@@ -31,7 +38,7 @@ export default function Controls({
       <button
         onClick={handleReset}
         disabled={rows.length === 0}
-        className="px-4 py-2 border rounded bg-gray-100 hover:bg-gray-200 disabled:opacity-50"
+        className="px-4 py-2 border rounded bg-gray-100 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         Reset All Edits
       </button>
